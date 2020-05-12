@@ -10,3 +10,6 @@ background-color: #00ffff;
 text-align: center;
 font-size: 5rem;
 }
+.container {
+    padding: 1rem;
+}

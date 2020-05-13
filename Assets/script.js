@@ -17,9 +17,27 @@ function renderHistory() {
         localStorage.setItem("searches", JSON.stringify(searches));
         $("#city").val("");
         renderHistory();
+        displayWeatherInfo();
       });
       $(document).on("click", ".city", function () {
-        console.log($(this).text()); // add the function to display the weather info here
+        displayWeatherInfo(); // displaying the weather info when a city is clicked
       });
       renderHistory();
-    });
+// creating a function to display the weather info
+function displayWeatherInfo(){
+  // setting up the query URL
+  var city = "" // need to make this input what the enter in the city search box
+  var queryURL = "https://samples.openweathermap.org/data/2.5/weather?q=" + city + "&appid=dadc20b0e9f1fa15e91b1c1cf640bb06" 
+  ;
+  // Creating the AJAX call 
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+console.log(response);
+
+  });
+}
+
+    
+});

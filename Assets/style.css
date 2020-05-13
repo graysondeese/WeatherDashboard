@@ -10,6 +10,18 @@ background-color: #00ffff;
 text-align: center;
 font-size: 5rem;
 }
-.container {
+.leftSide {
+    background-color: #d3d3d3;
+    margin-right: 85%;
+    float: left;
+    display: inline-block;
+}
+form {
     padding: 1rem;
+}
+#history {
+    padding: 1rem;
+}
+.rightSide {
+    float: left;
 }

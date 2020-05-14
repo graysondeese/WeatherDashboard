@@ -1,9 +1,13 @@
 $(document).ready(function() {
 // setting up the needed vars
-var weatherCurrent = document.querySelector(".weatherCurrent");
+var cityCurrent = document.querySelector(".cityCurrent");
+var tempCurrent = document.querySelector(".tempCurrent");
+var humidityCurrent = document.querySelector(".humidityCurrent");
+var windSpeedCurrent = document.querySelector(".windSpeedCurrent");
+var uvCurrent = document.querySelector(".uvCurrent");
 var fiveDay = document.getElementById("fiveDay");
 var searches = JSON.parse(localStorage.getItem("searches")) || [];
-// current time vars
+// current date vars
 var today = new Date();
 var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
 // Showing the search history      
@@ -39,8 +43,14 @@ function displayWeatherInfo(city){
     method: "GET"
   }).then(function(response) {
 console.log(response);
-// displaying the name of the city
-$(weatherCurrent).html("<h1>" + response.name + ": " + "("+ date + ")"+ "</h1>");
+// displaying the name of the city and the date
+$(cityCurrent).html("<h1>" + response.name + ": " + "("+ date + ")"+ "</h1>");
+// displaying all the current weather statistics
+$(tempCurrent).html("<p>"+"Temperature: " + response.main.temp +" °F"+ "</p>");
+$(humidityCurrent).html("<p>"+"Humidity: " + response.main.humidity +"%"+ "</p>");
+$(windSpeedCurrent).html("<p>"+"Wind Speed: " + response.wind.speed +" MPH"+ "</p>");
+$(uvCurrent).html("<p>"+"UV Index: " + "</p>");
+
 
   });
 }

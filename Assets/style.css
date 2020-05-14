@@ -31,8 +31,14 @@ form {
     float: left;
     display: inline-block;
     padding-left: 8%;
-    border-color: black;
-    /* border-width: 500px; */
-    border-style: solid;
     padding-right: 8%;
 }
+.weatherCurrent {
+    /* border-color: black;
+    border-style: solid; */
+}
+.tempCurrent, .humidityCurrent, .windSpeedCurrent, .uvCurrent {
+    font-size: 1.2rem;
+}
+
+

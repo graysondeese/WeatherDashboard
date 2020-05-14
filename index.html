@@ -14,8 +14,6 @@
   <body>
     <!-- Div with header -->
     <div class="header">Weather Dashboard</div>
-    <!-- Main div -->
-    <div class="container">
         <!-- Left side of page -->
       <div class="leftSide">
         <!-- Search for a city form -->
@@ -31,7 +29,7 @@
         <!-- Div for where the search history will be -->
         <div id="history"></div>
       </div>
-      <!-- Right side of the page -->
+      <!-- ==== Right side of the page ====== -->
       <div class="rightSide">
         <!-- div for the current weather -->
         <div class="weatherCurrent">
@@ -41,17 +39,44 @@
             <div class="windSpeedCurrent"></div>
             <div class="uvCurrent"></div>
         </div>
-          <!-- dic for the fiveday forecast -->
-          <div id="fiveDay">
-            <div class="date5"></div>
-            <div class="temp5"></div>
-            <div class="humidity5"></div>
-            <div class="windSpeed5"></div>
-            <div class="uv5"></div>
+          <!-- div for the fiveday forecast -->
+          <div class="fiveDay"></div> <br>
+          <div class="fiveDayBox">
+          <!-- Day 1 div -->
+            <div class="day1Box">
+            <div id="day1Date"></div>
+            <div class="temp5One"></div>
+            <div class="humidity5One"></div>
+            </div>
+            <!-- day 2 div -->
+            <div class="day2Box">
+              <div id="day2Date"></div>
+              <div class="temp5Two"></div>
+              <div class="humidity5Two"></div>
+              </div>
+            <!-- day 3 div -->
+            <div class="day3Box">
+              <div id="day3Date"></div>
+              <div class="temp5Three"></div>
+              <div class="humidity5Three"></div>
+              </div>
+              <!-- day 4 div -->
+              <div class="day4Box">
+                <div id="day4Date"></div>
+                <div class="temp5Four"></div>
+                <div class="humidity5Four"></div>
+                </div>
+                <!-- day 5 div -->
+                <div class="day5Box">
+                  <div id="day5Date"></div>
+                  <div class="temp5Five"></div>
+                  <div class="humidity5Five"></div>
+                  </div>
+
           </div>
+          
       </div>
 
-    </div>
     <script src="./Assets/script.js"></script>
   </body>
 </html>

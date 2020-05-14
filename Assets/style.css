@@ -41,8 +41,14 @@ form {
 .tempCurrent, .humidityCurrent, .windSpeedCurrent, .uvCurrent {
     font-size: 1.2rem;
 }
-
-    /* display: flex;
-    flex-direction: row; */
+.fiveDayBox {
+display: flex;
+    flex-direction: row; 
+}
+.day1Box, .day2Box, .day3Box, .day4Box, .day5Box {
+    background-color: blue; 
+    color: white;
+}
+    
 
 

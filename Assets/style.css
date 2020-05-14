@@ -20,6 +20,10 @@ font-size: 5rem;
     font-size: 1.5rem;
     padding-right: 8%;
     display: inline-block;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
 }
 form {
     padding: 1rem;
@@ -28,27 +32,43 @@ form {
     padding: 1rem;
 }
 .rightSide {
-    float: left;
     display: inline-block;
     padding-left: 8%;
     padding-right: 8%;
+    display: flex;
+    flex-direction: column;
 }
 .weatherCurrent {
     margin-top: 5px;
     border-color: black;
     border-style: solid;
+    background-color: lightblue;
+    padding: 1%;
+
 }
 .tempCurrent, .humidityCurrent, .windSpeedCurrent, .uvCurrent {
     font-size: 1.2rem;
 }
 .fiveDayBox {
-display: flex;
+    display: flex;
     flex-direction: row; 
 }
 .day1Box, .day2Box, .day3Box, .day4Box, .day5Box {
     background-color: blue; 
     color: white;
+    margin: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
 }
-    
 
+#day1Date, #day2Date, #day3Date, #day4Date, #day5Date {
+    font-size: larger;
+}
+
+.fiveDay {
+    font-size: 40px;
+    margin: 20px;
+}
 

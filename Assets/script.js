@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  $(".fiveDayBox").hide();
   $(".weatherCurrent").hide();
   // setting up the needed vars
   var cityCurrent = document.querySelector(".cityCurrent");
@@ -21,6 +22,7 @@ $(document).ready(function () {
   }
 
   $("form").on("submit", function (event) {
+    $(".fiveDayBox").show();
     $(".weatherCurrent").show();
     event.preventDefault();
     var city = $("#city").val().trim();
@@ -33,6 +35,7 @@ $(document).ready(function () {
 
   $(document).on("click", ".city", function () {
     $(".weatherCurrent").show();
+    $(".fiveDayBox").show();
     displayWeatherInfo($(this).text()); // displaying the weather info when a city is clicked
   });
   renderHistory();
@@ -113,8 +116,37 @@ $(document).ready(function () {
         "<p>" + "Humidity: " + day1Humidity + "%" + "</p>"
       );
       //day 2
-      
-      
+      $("#day2Date").text(response.list[9].dt_txt.split(' ')[0]);
+      $(".temp5Two").html(
+        "<p>" + "Temperature: " + day2Temp + " °F" + "</p>"
+      );
+      $(".humidity5Two").html(
+        "<p>" + "Humidity: " + day2Humidity + "%" + "</p>"
+      );
+      //day 3
+      $("#day3Date").text(response.list[17].dt_txt.split(' ')[0]);
+      $(".temp5Three").html(
+        "<p>" + "Temperature: " + day3Temp + " °F" + "</p>"
+      );
+      $(".humidity5Three").html(
+        "<p>" + "Humidity: " + day3Humidity + "%" + "</p>"
+      );
+      //day 4
+      $("#day4Date").text(response.list[25].dt_txt.split(' ')[0]);
+      $(".temp5Four").html(
+        "<p>" + "Temperature: " + day4Temp + " °F" + "</p>"
+      );
+      $(".humidity5Four").html(
+        "<p>" + "Humidity: " + day4Humidity + "%" + "</p>"
+      );
+      //day 5
+      $("#day5Date").text(response.list[33].dt_txt.split(' ')[0]);
+      $(".temp5Five").html(
+        "<p>" + "Temperature: " + day5Temp + " °F" + "</p>"
+      );
+      $(".humidity5Five").html(
+        "<p>" + "Humidity: " + day5Humidity + "%" + "</p>"
+      );
      })
   }
 });

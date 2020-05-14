@@ -57,7 +57,7 @@ $(document).ready(function () {
       var long = response.coord.lon;
       var icon = $("<img>").attr(
         "src",
-        " http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png"
+        " https://openweathermap.org/img/wn/" + response.weather[0].icon + ".png"
       );
       $(cityCurrent)
         .html("<h1>" + response.name + ": " + "(" + date + ")" + "</h1>")
@@ -76,7 +76,7 @@ $(document).ready(function () {
       // ====== UV Index =====
     $.ajax({
       url:
-        "http://api.openweathermap.org/data/2.5/uvi?appid=dadc20b0e9f1fa15e91b1c1cf640bb06&lat=" +
+        "https://api.openweathermap.org/data/2.5/uvi?appid=dadc20b0e9f1fa15e91b1c1cf640bb06&lat=" +
         lat +
         "&lon=" +
         long,

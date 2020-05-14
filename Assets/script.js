@@ -5,7 +5,7 @@ var tempCurrent = document.querySelector(".tempCurrent");
 var humidityCurrent = document.querySelector(".humidityCurrent");
 var windSpeedCurrent = document.querySelector(".windSpeedCurrent");
 var uvCurrent = document.querySelector(".uvCurrent");
-var fiveDay = document.getElementById("fiveDay");
+// variables for the 5 day
 var searches = JSON.parse(localStorage.getItem("searches")) || [];
 // current date vars
 var today = new Date();
@@ -44,15 +44,24 @@ function displayWeatherInfo(city){
   }).then(function(response) {
 console.log(response);
 // displaying the name of the city and the date
-$(cityCurrent).html("<h1>" + response.name + ": " + "("+ date + ")"+ "</h1>");
+var icon = $("<img>").attr("src", " http://openweathermap.org/img/wn/" + response.weather[0].icon + '.png');
+$(cityCurrent).html("<h1>" + response.name + ": " + "("+ date + ")"+ "</h1>").append(icon);
+// $(cityCurrent).append(icon);
 // displaying all the current weather statistics
 $(tempCurrent).html("<p>"+"Temperature: " + response.main.temp +" °F"+ "</p>");
 $(humidityCurrent).html("<p>"+"Humidity: " + response.main.humidity +"%"+ "</p>");
 $(windSpeedCurrent).html("<p>"+"Wind Speed: " + response.wind.speed +" MPH"+ "</p>");
 $(uvCurrent).html("<p>"+"UV Index: " + "</p>");
-
-
   });
+
+// 5 day forecast 
+  //  $.ajax({
+  //   url: "https://api.openweathermap.org/data/2.5/forecast?q=" +city + "&appid=dadc20b0e9f1fa15e91b1c1cf640bb06" + "&units=imperial",
+  //   method: "GET"
+  //  }).then(function(response) {
+  //   console.log(response);
+  //  })
+
 }
 
     

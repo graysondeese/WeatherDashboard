@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  $(".weatherCurrent").hide();
   // setting up the needed vars
   var cityCurrent = document.querySelector(".cityCurrent");
   var tempCurrent = document.querySelector(".tempCurrent");
@@ -6,6 +7,12 @@ $(document).ready(function () {
   var windSpeedCurrent = document.querySelector(".windSpeedCurrent");
   var uvCurrent = document.querySelector(".uvCurrent");
   // variables for the 5 day
+  var date5 = document.querySelector(".date5");
+  var temp5 = document.querySelector(".temp5");
+  var humidity5 = document.querySelector(".humidity5");
+  var windSpeed5 = document.querySelector(".windSpeed5");
+  var uv5 = document.querySelector(".uv5");
+  // var for searches
   var searches = JSON.parse(localStorage.getItem("searches")) || [];
   // current date vars
   var today = new Date();
@@ -20,6 +27,7 @@ $(document).ready(function () {
   }
 
   $("form").on("submit", function (event) {
+    $(".weatherCurrent").show();
     event.preventDefault();
     var city = $("#city").val().trim();
     searches.push(city);
@@ -30,6 +38,7 @@ $(document).ready(function () {
   });
 
   $(document).on("click", ".city", function () {
+    $(".weatherCurrent").show();
     displayWeatherInfo($(this).text()); // displaying the weather info when a city is clicked
   });
   renderHistory();
@@ -88,6 +97,25 @@ $(document).ready(function () {
       method: "GET"
      }).then(function(response) {
       console.log(response);
+      // setting the vars
+      var day1Temp = (response.list[1].main.temp).toFixed(1);
+      var day1Humidity = (response.list[1].main.humidity).toFixed(1);
+      var day2Temp = (response.list[1].main.temp).toFixed(1);
+      var day2Humidity = (response.list[1].main.humidity).toFixed(1);
+      var day3Temp = (response.list[1].main.temp).toFixed(1);
+      var day3Humidity = (response.list[1].main.humidity).toFixed(1);
+      var day4Temp = (response.list[1].main.temp).toFixed(1);
+      var day4Humidity = (response.list[1].main.humidity).toFixed(1);
+      var day5Temp = (response.list[1].main.temp).toFixed(1);
+      var day5Humidity = (response.list[1].main.humidity).toFixed(1);
+      // displaying the 5 day statistics
+      $(temp5).html(
+        "<p>" + "Temperature: " + day1Temp + " °F" + "</p>"
+      );
+      $(humidity5).html(
+        "<p>" + "Humidity: " + day1Humidity + "%" + "</p>"
+      );
+      
      })
   }
 });

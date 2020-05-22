@@ -1,4 +1,4 @@
-# 06 Weather Dashboard
+# Weather Dashboard
 ****
 # About
 ****
